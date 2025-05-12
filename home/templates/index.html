@@ -1,0 +1,101 @@
+{% extends "global/base.html" %}
+
+{% block main %}
+{% load static %}
+<main>
+    <aside>
+        <header>
+            <img class="card" src="images/alb1.jpg" alt="foto album" onclick="playMusic('musicas/music1.mp3')">
+            <img class="card" src="images/alb2.jpg" alt="foto album" onclick="playMusic('musicas/music2.mp3')">
+            <img class="card" src="images/alb3.jpg" alt="foto album" onclick="playMusic('musicas/music3.mp3')">
+            <img class="card" src="images/alb4.jpg" alt="foto album" onclick="playMusic('musicas/music4.mp3')">
+            <img class="card" src="images/alb5.jpg" alt="foto album" onclick="playMusic('musicas/music5.mp3')">
+            <img class="card" src="images/alb6.jpg" alt="foto album" onclick="playMusic('musicas/music6.mp3')">
+        </header>
+    </aside>
+
+    <section>
+        <video controls autoplay muted>
+            <source src="videos/video.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
+    </section>
+
+    <section class="cardn">
+        <article>
+            <img class="card" src="images/q1.jpg">
+            <p>A frase "Eu já cansei de gastar minha energia com coisas que eu sabia que não ia andar" mostra um
+                momento de amadurecimento de BK. Ele reflete sobre aprender a valorizar o tempo e parar de insistir
+                em caminhos que não levam a lugar nenhum. É um recado simples, mas poderoso: focar no que realmente
+                importa e deixar para trás o que não agrega. Essa sinceridade é algo marcante nas letras dele,
+                sempre trazendo reflexões profundas de forma direta e real.</p>
+        </article>
+        <article class="invertido">
+            <img class="card" src="images/q2.jpg">
+            <p>"Eu sou querido no céu, eu sou amado no inferno; entre o errado e o certo, eu prefiro ter os dois por
+                perto." BK apresenta aqui a dualidade que permeia o cotidiano e as escolhas humanas. Essa linha
+                mostra como ele enxerga a vida de forma completa, aceitando o lado bom e o lado ruim como partes
+                necessárias da jornada. Ao reconhecer sua presença em extremos opostos, o artista nos convida a
+                refletir sobre como o equilíbrio entre os erros e os acertos pode ser transformador. A mensagem
+                sugere que abraçar as contradições da vida nos torna mais resilientes e conscientes de quem
+                realmente somos.</p>
+        </article>
+        <article>
+            <img class="card" src="images/q3.jpg">
+            <p>"Tive que suportar, querendo capotar; tive que apostar, ninguém pra acreditar, virei ao meu favor."
+                Aqui, BK reflete sobre superação e autoconfiança. Ele relata as dificuldades que enfrentou, as
+                dúvidas internas e externas que quase o fizeram desistir. Contudo, a mensagem é clara: mesmo sem
+                apoio, ele confiou no seu próprio potencial e transformou os desafios em força. Esse trecho inspira
+                quem ouve a continuar lutando pelos seus sonhos, mesmo quando ninguém mais acredita. É um grito de
+                independência e fé em si mesmo.</p>
+        </article>
+        <article class="invertido">
+            <img class="card" src="images/q4.jpg">
+            <p>"E o que fazer, porque fazer, quando fazer, são coisas que só importam pra mim." Essa frase expressa
+                uma afirmação de liberdade pessoal. BK mostra que suas decisões e escolhas têm raízes no que ele
+                acredita ser significativo. O questionamento sobre o "porquê" e o "quando" aponta para uma visão
+                madura de que nem sempre é preciso justificar ou seguir padrões alheios. A mensagem aqui é sobre
+                autenticidade e a importância de viver conforme seus próprios valores e tempos, sem se deixar
+                influenciar pelas expectativas externas.</p>
+        </article>
+    </section>
+
+    <section class="card-container" id="Curiosadades">
+        <article class="card"
+            onclick="abrir('images/img1.jpg', 'O rapper BK recebeu o nome Abebe Bikila em homenagem ao lendário maratonista etíope, vencedor da maratona olímpica de 1960 em Roma, correndo descalço. Nomeado por sua mãe, a escolha reflete a admiração por Bikila como símbolo de superação e pioneirismo. Essa conexão é carregada por BK não apenas como uma identidade artística, mas como uma inspiração em sua jornada de autenticidade e conquista no rap.')">
+            <img src="images/img1.jpg" alt="Card não carregado">
+        </article>
+        <article class="card"
+            onclick="abrir('images/img2.jpg', 'Em Castelos e Ruínas, o rap de BK era mais focado em questões sociais e pessoais. Após o álbum, suas letras se tornaram mais introspectivas, explorando emoções e dilemas internos, com um estilo mais poético e emocional. A principal diferença é a transição de um rap combativo para um mais reflexivo e pessoal.')">
+            <img src="images/img2.jpg" alt="Card não carregado">
+        </article>
+        <article class="card"
+            onclick="abrir('images/img3.jpg', 'BK é meu artista favorito desde o lançamento de seu primeiro álbum, conquistando um lugar especial na minha vida com suas letras e autenticidade. Quando busquei um protagonista para este site, ele foi a escolha óbvia, tanto por sua relevância quanto pela conexão pessoal que tenho com sua obra. Além disso, BK marcou minha memória ao protagonizar o melhor show que já presenciei, um momento inesquecível que reforçou ainda mais minha admiração por ele.')">
+            <img src="images/img3.jpg" alt="Card não carregado">
+        </article>
+        <article class="card"
+            onclick="abrir('images/img4.jpg', 'Uma curiosidade interessante sobre o rapper BK é que ele, além de ser um dos nomes mais importantes do rap nacional, também é um grande fã de literatura. Em várias entrevistas, BK já mencionou como os livros influenciam suas letras e sua visão de mundo. Ele acredita que a leitura não apenas o ajuda a aprimorar sua escrita, mas também a expandir sua compreensão da realidade e a dar profundidade aos temas abordados em suas músicas, como questões sociais e existenciais.')">
+            <img src="images/img4.jpg" alt="Card não carregado">
+        </article>
+        <article class="card"
+            onclick="abrir('images/img5.jpg', 'A KGL, que representa os bairros Catete, Glória e Lapa no Rio de Janeiro, tem grande influência na música de BK. Esses bairros, ricos em cultura e vivências urbanas, são parte importante da sua trajetória. Para BK, a KGL simboliza resistência e autenticidade, refletindo a realidade das ruas e os desafios da vida no Rio, que marcaram sua música e visão de mundo.')">
+            <img src="images/img5.jpg" alt="Card não carregado">
+        </article>
+    </section>
+
+    <section id="transparente" class="modal-overlay" onclick="fechar(event)">
+        <section class="card-conteudo" onclick="event.stopPropagation()">
+            <img id="Imagem" src="" alt="Imagem do Modal">
+            <section class="card-texto" id="Texto">
+                </div>
+            </section>
+        </section>
+
+        <audio id="musicPlayer" hidden>
+            <source id="audioSource" src="" type="audio/mp3">
+            Seu navegador não suporta esse tipo de audio.
+        </audio>
+
+</main>
+
+{% endblock main %}
