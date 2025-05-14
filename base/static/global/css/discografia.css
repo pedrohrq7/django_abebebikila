@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1b1b1f;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    width:100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #23232e;
+    height: 8vh;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+#feat{
+    display: flex;
+     font-size: 28px;
+     font-weight: bold;
+     text-align: center;
+     justify-content: center;
+     padding: 10px;
+}
+
+footer {
+    background: #23232e;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    letter-spacing: 2px;
+    width: 100%;
+    margin-top: auto;
+    bottom: 0;
+}
+
+main p {
+    max-width: 500px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+table{
+    margin:20px 20px 20px 20px;
+    border-collapse: collapse;
+    background: #23232e;
+    border-radius: 10px;
+}
+
+th, td{
+    padding:15px;
+    text-align: left;
+    border: 1px solid;
+}
+
+tr:hover {
+    background: #333;
+}
+
+td {
+    color: #bbb;
+}
+
+.card-container {
+    display: flex;
+    gap: 50px;
+    margin: 0 10%;
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 10px 100px 20px;
+}
+
+.card {
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+article p{
+    color: #A8A8A8;
+    padding: 15px;
+    font-size: 18px;
+    text-align: justify;
+}
+.card img {
+    width: 300px;
+    height: 450px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.container-slider{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.container-images{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    height: auto;
+}
+
+.slider{
+    position:absolute;
+    width: 100%;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.on {
+    opacity: 1;
+}
+
+#prev-button, #next-button{
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+   
+}
+
+#prev-button img, #next-button img {
+    width: 100%;
+    height: 100%;
+}
+
+.fade{
+    opacity: 0; 
+    transition: opacity 4s;
+}
