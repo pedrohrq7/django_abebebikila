@@ -9,6 +9,9 @@
                 <li><a href="#Curiosadades">Curiosidades</a></li>
                 <li><a href="#Direitos">Direitos</a></li>
                 <li><a href="{% url 'discografia' %}">Discografia</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cadastro' %}">Receba Noticias</a>
+                </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                     <span class="nav-link active">Usuário: {{ user.get_username }}</span>

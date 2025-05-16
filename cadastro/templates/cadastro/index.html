@@ -1,0 +1,33 @@
+{% extends "global/base.html" %}
+
+{% block main %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'global/css/style.css' %}">
+    <main>
+    <section class="container mt-5 mb-5">
+        <form method="post" action="{%if pessoa.id_pessoa %}{% url 'atualizar' pessoa.id_pessoa %}{% else %}{% url 'gravar' %}{% endif %}">
+    {% comment %}    <form name="teste" method="post" action="{% url 'gravar' %}"> {% endcomment %}
+            {% csrf_token %}
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" name="nome" id="nome" class="form-control" required value = {{ pessoa.nome }}>
+            <label for="movel" class="form-label">Telefone</label>
+            <input type="tel" name="movel" id="movel" maxlength="11"  class="form-control" value = {{ pessoa.telefone }}>
+            <label for="correio" class="form-label">Email</label>
+            <input type="email" name="correio" id="correio" class="form-control" required value = {{ pessoa.email }}>
+            <hr>
+            <input type="submit" class="btn btn-outline-success" value="Enviar">
+            <input type="reset"  class="btn btn-outline-danger" value="Limpar">
+            <input type="button" class="btn btn-outline-secondary" value="Mostrar todos">      
+        </form>
+        <table class="table table-striped">
+           
+            {% for pessoa in pessoas %}
+            <tr>
+                
+                
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+   </main>
+   {% endblock main %}
