@@ -24,4 +24,5 @@ urlpatterns = [
     path('home/', include('home.urls')),
     path('discografia/', include('discografia.urls')),
     path('login/', include('login.urls')),
+    path('cadastro/', include('cadastro.urls')),
 ]
