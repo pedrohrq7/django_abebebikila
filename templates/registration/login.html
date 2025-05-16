@@ -2,7 +2,8 @@
 
 
 {% block main %}
-
+{% load static %}
+<link rel="stylesheet" href="{% static 'global/css/style.css' %}">
 
   {% if form.errors %}
     <p>Seu nome de usuário e senha não correspondem. Por favor, tente novamente.</p>

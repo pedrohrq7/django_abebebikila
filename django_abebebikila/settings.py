@@ -40,8 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'discografia',
-    'login',
-    'cadastro',
 ]
 
 MIDDLEWARE = [

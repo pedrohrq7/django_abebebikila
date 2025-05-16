@@ -2,6 +2,9 @@
 
 
 {% block main %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'global/css/style.css' %}">
+
   <p>Desconectado!</p>
   <a href="{% url 'login'%}">Clique aqui para fazer login novamente.</a>
 {% endblock %}
