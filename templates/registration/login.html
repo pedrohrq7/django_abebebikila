@@ -1,142 +1,43 @@
 {% extends 'global/base.html' %}
 
-
 {% block main %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'global/css/style.css' %}">
-<style>
-    /* Estilos específicos para a página de login */
-    .login-container {
-        max-width: 400px;
-        margin: 50px auto;
-        padding: 30px;
-        background: #2a2a32;
-        border-radius: 10px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    }
+<link rel="stylesheet" href="{% static 'global/css/login.css' %}">
 
-    .login-title {
-        text-align: center;
-        color: #f0f0f0;
-        margin-bottom: 25px;
-        font-size: 1.8rem;
-        font-weight: 300;
-    }
+<div class="login-page-container">
+  <div class="login-center-wrapper">
+    <div class="login-box">
+      {% if form.errors %}
+        <p class="error-message">Seu nome de usuário e senha não correspondem. Por favor, tente novamente.</p>
+      {% endif %}
 
-    .login-form {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
+      {% if next %}
+        {% if user.is_authenticated %}
+          <p class="error-message">Sua conta não tem acesso a esta página. Para prosseguir, faça login com uma conta que tenha acesso.</p>
+        {% else %}
+          <p class="info-message">Faça login para ver esta página.</p>
+        {% endif %}
+      {% endif %}
 
-    .form-row {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .form-row label {
-        color: #d1d1d1;
-        font-size: 0.95rem;
-    }
-
-    .form-row input {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #444;
-        border-radius: 5px;
-        background-color: #3a3a42;
-        color: #fff;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-    }
-
-    .form-row input:focus {
-        outline: none;
-        border-color: #6c63ff;
-        box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
-    }
-
-    .login-btn {
-        width: 100%;
-        padding: 12px;
-        background-color: #6c63ff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        margin-top: 10px;
-    }
-
-    .login-btn:hover {
-        background-color: #5a52d8;
-    }
-
-    .login-messages {
-        margin-bottom: 20px;
-        padding: 15px;
-        border-radius: 5px;
-        background-color: #dc3545;
-        color: white;
-        text-align: center;
-    }
-
-    .login-links {
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    .login-links a {
-        color: #6c63ff;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .login-links a:hover {
-        color: #8a85ff;
-        text-decoration: underline;
-    }
-</style>
-  {% if form.errors %}
-    <p>Seu nome de usuário e senha não correspondem. Por favor, tente novamente.</p>
-  {% endif %}
-
-
-  {% if next %}
-    {% if user.is_authenticated %}
-      <p>Sua conta não tem acesso a esta página. Para prosseguir,
-        faça login com uma conta que tenha acesso.</p>
-    {% else %}
-      <p>Faça login para ver esta página.</p>
-    {% endif %}
-  {% endif %}
-
-
-  <form method="post" action="{% url 'login' %}" class="form-control">
-    {% csrf_token %}
-    <table>
-      <tr>
-        <td>{{ form.username.label_tag }}</td>
-        <td>{{ form.username }}</td>
-      </tr>
-      <tr>
-        <td>{{ form.password.label_tag }}</td>
-        <td>{{ form.password }}</td>
-      </tr>
-    </table>
-    <input type="submit" value="login" />
-    <input type="hidden" name="next" value="{{ next }}" />
-
-
-    {# Supõe que você configure a visualização password_reset em seu URLconf #}
-    <p><a href="{% url 'password_reset' %}">Esqueceu a senha?</a></p>
-   
-  </form>
-
-
- 
+      <form method="post" action="{% url 'login' %}" class="login-form">
+        {% csrf_token %}
+        <div class="form-group">
+          {{ form.username.label_tag }}
+          {{ form.username }}
+        </div>
+        <div class="form-group">
+          {{ form.password.label_tag }}
+          {{ form.password }}
+        </div>
+        <button type="submit" class="login-button">Login</button>
+        <input type="hidden" name="next" value="{{ next }}" />
+        <div class="forgot-password">
+          <a href="{% url 'password_reset' %}">Esqueceu a senha?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock main %}
-
 
