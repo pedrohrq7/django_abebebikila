@@ -3,6 +3,128 @@
 {% block main %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'global/css/style.css' %}">
+<style>
+    /* Estilos específicos para o formulário - não conflitam com o CSS existente */
+    .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px;
+        background: #2a2a32;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #f0f0f0;
+        font-size: 1.8rem;
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: 8px;
+        color: #d1d1d1;
+        font-size: 0.95rem;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #444;
+        border-radius: 5px;
+        background-color: #3a3a42;
+        color: #fff;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        outline: none;
+        border-color: #6c63ff;
+        box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
+    }
+
+    .form-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        flex: 1;
+        text-align: center;
+    }
+
+    .btn-outline-success {
+        border: 2px solid #28a745;
+        color: #28a745;
+        background: transparent;
+    }
+
+    .btn-outline-success:hover {
+        background: #28a745;
+        color: #fff;
+    }
+
+    .btn-outline-danger {
+        border: 2px solid #dc3545;
+        color: #dc3545;
+        background: transparent;
+    }
+
+    .btn-outline-danger:hover {
+        background: #dc3545;
+        color: #fff;
+    }
+
+    .btn-outline-secondary {
+        border: 2px solid #6c757d;
+        color: #6c757d;
+        background: transparent;
+    }
+
+    .btn-outline-secondary:hover {
+        background: #6c757d;
+        color: #fff;
+    }
+
+    hr {
+        border-color: #444;
+        margin: 25px 0;
+    }
+
+    /* Estilo para a tabela (caso queira usar no futuro) */
+    .table-container {
+        margin-top: 40px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .table th, .table td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #444;
+    }
+
+    .table th {
+        background-color: #3a3a42;
+        color: #f0f0f0;
+    }
+
+    .table tr:hover {
+        background-color: #3a3a42;
+    }
+</style>
     <main>
     <section class="container mt-5 mb-5">
         <form method="post" action="{%if pessoa.id_pessoa %}{% url 'atualizar' pessoa.id_pessoa %}{% else %}{% url 'gravar' %}{% endif %}">
